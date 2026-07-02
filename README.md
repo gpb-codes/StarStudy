@@ -1,105 +1,314 @@
-# StarStudy 🌟
+<div align="center">
 
-Plataforma educativa inteligente con roles, gamificación y gestión de hábitos.
+# StarStudy
 
-Diseñada para conectar **estudiantes**, **profesores**, **personal administrativo** y **programadores** en un solo entorno, con una interfaz temática *Noche Estrellada* al estilo Van Gogh.
+### Plataforma educativa inteligente para la gestión académica, hábitos y gamificación.
 
----
+<p>
+StarStudy centraliza la administración de tareas, horarios, hábitos y comunicación entre estudiantes, docentes, personal administrativo y desarrolladores en una única plataforma.
+</p>
 
-## ✨ ¿Para qué sirve?
-
-**StarStudy** organiza la vida académica mediante:
-
-| Funcionalidad | Descripción |
-|---------------|-------------|
-| **Tareas** | Creación, asignación y seguimiento con niveles de importancia (Baja → Crítica). Filtros por estado y urgencia. |
-| **Horarios** | Gestión de horarios personales y de curso, con vista tipo mapa interactivo. |
-| **Hábitos** | Seguimiento diario con sistema de niveles: completá un hábito cada día para subir de nivel. |
-| **Notificaciones** | Alertas al completar tareas, al vencer plazos, y recordatorios de hábitos. |
-| **Vinculación** | Profesores generan un código; estudiantes lo usan al registrarse para vincularse automáticamente. |
-| **Gamificación** | Sistema de niveles y misiones (visible para rol Programador). |
+</div>
 
 ---
 
-## 👥 Roles
+## Descripción
 
-| Rol | Acceso |
-|-----|--------|
-| **Estudiante** | Tareas asignadas, horario del curso vinculado |
-| **Profesor** | Crear/asignar tareas, horarios personales y de clase, código de vinculación |
-| **Personal** | Horarios, tareas personales, **sistema de hábitos** "Misión Principal" |
-| **Programador** | Vista tipo misión/mapa, conexión con GitHub |
+StarStudy es una plataforma desarrollada con Django que busca mejorar la organización académica mediante herramientas de productividad, seguimiento de hábitos y un sistema de gamificación.
+
+La aplicación permite que estudiantes, docentes, personal administrativo y desarrolladores trabajen dentro de un mismo entorno, con funcionalidades adaptadas a cada rol.
 
 ---
 
-## 🖼️ Diseño
+## Características
 
-- Temática oscura "Noche Estrellada" con acentos dorados (`#ffd54f`)
-- Formularios transparentes con borde inferior dorado
-- Modal auto-cierre a 3 segundos
-- Totalmente responsive
+<table>
+<tr>
+<td width="50%">
+
+### Gestión de tareas
+
+- Creación de tareas
+- Asignación de tareas
+- Prioridades
+- Seguimiento de progreso
+- Estados de tareas
+- Filtros
+
+</td>
+
+<td width="50%">
+
+### Gestión de horarios
+
+- Horarios personales
+- Horarios por curso
+- Organización visual
+- Acceso según el rol
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### Sistema de hábitos
+
+- Registro diario
+- Seguimiento
+- Sistema de experiencia
+- Niveles
+- Misión Principal
+
+</td>
+
+<td>
+
+### Notificaciones
+
+- Recordatorios automáticos
+- Avisos de vencimiento
+- Confirmación de tareas
+- Recordatorios de hábitos
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛠️ Tecnologías
+## Sistema de vinculación
 
-- **Backend:** Django 6.0
-- **Frontend:** Bootstrap 5, Bootstrap Icons
-- **Base de datos:** SQLite
-- **Notificaciones programadas:** APScheduler
+Los docentes generan un código único que permite vincular automáticamente a los estudiantes.
+
+Beneficios:
+
+- Asociación profesor-estudiante
+- Asignación automática de tareas
+- Acceso al horario correspondiente
 
 ---
 
-## ⚙️ Instalación
+## Gamificación
+
+- Sistema de niveles
+- Experiencia
+- Misiones
+- Seguimiento del progreso
+- Incentivos para mantener la constancia
+
+---
+
+## Roles
+
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Descripción</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Estudiante</strong></td>
+<td>Visualizar tareas, horarios, progreso y notificaciones.</td>
+</tr>
+
+<tr>
+<td><strong>Profesor</strong></td>
+<td>Crear tareas, administrar cursos, gestionar horarios y generar códigos de vinculación.</td>
+</tr>
+
+<tr>
+<td><strong>Personal</strong></td>
+<td>Gestionar tareas internas, horarios y hábitos.</td>
+</tr>
+
+<tr>
+<td><strong>Programador</strong></td>
+<td>Acceso al panel técnico e integración con GitHub.</td>
+</tr>
+
+</tbody>
+</table>
+
+---
+
+## Tecnologías
+
+<div align="center">
+
+| Backend | Frontend | Base de Datos | Automatización |
+|----------|----------|---------------|----------------|
+| Django 6 | Bootstrap 5 | SQLite | APScheduler |
+| Python 3.13 | HTML5 · CSS3 · JavaScript | | |
+
+</div>
+
+---
+
+## Estructura
+
+```text
+StarStudy/
+│
+├── accounts/
+├── tasks/
+├── habits/
+├── schedules/
+├── notifications/
+├── templates/
+├── static/
+├── media/
+├── manage.py
+└── requirements.txt
+```
+
+---
+
+## Instalación
+
+### Clonar el repositorio
 
 ```bash
-# Clonar
 git clone https://github.com/tu-usuario/StarStudy.git
 cd StarStudy
+```
 
-# Entorno virtual
+### Crear entorno virtual
+
+**Windows**
+
+```bash
 python -m venv venv
-venv\Scripts\activate   # Windows
-# source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate
+```
 
-# Dependencias
+**Linux / macOS**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Instalar dependencias
+
+```bash
 pip install -r requirements.txt
+```
 
-# Base de datos
+### Aplicar migraciones
+
+```bash
 python manage.py migrate
+```
 
-# Iniciar servidor
+### Crear administrador (opcional)
+
+```bash
+python manage.py createsuperuser
+```
+
+### Ejecutar el servidor
+
+```bash
 python manage.py runserver
 ```
 
-Abrir http://127.0.0.1:8000/
+Abrir:
+
+```text
+http://127.0.0.1:8000/
+```
 
 ---
 
-## 🧪 Primeros pasos
+## Primeros pasos
 
-1. Registrate con cualquier rol (Estudiante, Profesor, Personal, Programador)
-2. Si sos **Profesor**: creá tareas y compartí tu código de vinculación
-3. Si sos **Estudiante**: vinculate con el código de un profesor
-4. Si sos **Personal**: probá la sección "Misión Principal" (hábitos)
-5. Si sos **Programador**: conectá tu cuenta de GitHub
+### Profesor
+
+1. Crear una cuenta.
+2. Generar un código de vinculación.
+3. Crear horarios.
+4. Asignar tareas.
+
+### Estudiante
+
+1. Registrarse.
+2. Ingresar el código del profesor.
+3. Consultar tareas.
+4. Completar actividades.
+
+### Personal
+
+1. Gestionar tareas.
+2. Registrar hábitos.
+3. Completar la Misión Principal.
+
+### Programador
+
+1. Conectar GitHub.
+2. Acceder al panel técnico.
 
 ---
 
-## 🤝 Comunidad
+## Roadmap
 
-**StarStudy** es un proyecto abierto a toda la comunidad educativa y de desarrollo.
-
-- **Usalo** — registrate con tu rol y probá todas las funcionalidades
-- **Compartilo** — si te sirve, recomendalo a otros estudiantes o docentes
-- **Mejoralo** — si sabés programar, hacé fork, creá una branch y mandá un pull request
-- **Reportá bugs** — abrí un issue en GitHub si encontrás algún error
-- **Proponé ideas** — cualquier sugerencia es bienvenida
-
-Entre todos podemos hacer de StarStudy una herramienta cada vez mejor para la educación. ¡Sumate y aportá tu granito de estrella! 🌟
+- [ ] Inteligencia Artificial
+- [ ] Calendario inteligente
+- [ ] Aplicación móvil
+- [ ] Modo offline
+- [ ] Integración con Google Calendar
+- [ ] Dashboard avanzado
+- [ ] Sistema de logros
+- [ ] API REST
+- [ ] OAuth
+- [ ] Chat en tiempo real
+- [ ] Exportación de horarios
 
 ---
 
-## 📄 Licencia
+## Contribuir
 
-Uso educativo.
+```bash
+# Fork del proyecto
+
+git checkout -b feature/nueva-funcionalidad
+
+git commit -m "feat: nueva funcionalidad"
+
+git push origin feature/nueva-funcionalidad
+```
+
+Posteriormente abre un Pull Request.
+
+---
+
+## Reportar errores
+
+Si encuentras algún problema:
+
+1. Abre un Issue.
+2. Describe el error.
+3. Explica cómo reproducirlo.
+4. Adjunta capturas si es necesario.
+
+---
+
+## Licencia
+
+Este proyecto está destinado a fines educativos y de aprendizaje.
+
+Consulta el archivo **LICENSE** para más información.
+
+---
+
+<div align="center">
+
+### Si este proyecto te resulta útil
+
+<strong>Considera darle una estrella al repositorio y contribuir con nuevas ideas o mejoras.</strong>
+
+</div>
